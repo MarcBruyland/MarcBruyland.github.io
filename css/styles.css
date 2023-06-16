@@ -41,6 +41,11 @@ hr {
 p {
     line-height: 2;
 }
+li {
+    margin: 0% 30% 0% 40%;
+    align: left;
+    text-align: left;
+}
 /******************************* CLASS SELECTORS *****************************/
 .top-container {
     background-color: #D8E3E7;
@@ -122,5 +127,10 @@ p {
     color: #EAF6F6;
     font-size: 0.75rem;
     padding: 20px 0;
+}
+
+.cat_img {
+    max-width: 20%;
+    hight: auto;
 }
 /******************************* ID SELECTORS ********************************/
