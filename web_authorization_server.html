@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Marc Bruyland</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="top-container">
+        <img class="top-cloud" src="images/cloud.png" alt="cloud-img">
+        <h1>My portfolio.</h1>
+        <h2>Authorization server (OAuth based)</h2>
+        <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img">
+        <img src="images/mountain.png" alt="mountain-img">
+    </div>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/target.png" alt="todo" class="cat_img">
+        <h2>Goal</h2>
+        <p class="intro">In this project, 3 servers are developed: a client server, an authorization server and a resource server. A user goes to the authorization server via the client server. The user authenticates to the authorization server without revealing the credentials to the client server. The client server can access the resource on the resources server on behalf of the user by means of an access code which can be checked by the resources server.
+        Note: this project was inspired by the following <a href="https://medium.com/@ratrosy/building-a-basic-authorization-server-using-authorization-code-flow-c06866859fb1">tutorial</a>.</p>
+        <br>
+      </div>
+    </div>
+    <hr>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/techniques.png" alt="todo" class="cat_img">
+        <h2>Techniques used</h2>
+        <p class="intro">The following techniques were used:</p>
+          <ul>
+              <li>PKI: the public key of the auth. server is known to the client server and the resources server; the private key of the auth. server is used for signing.</li>
+              <li>OAuth: client server, authorization server, resources server</li>
+              <li>openssl: generating a PKI key pair on Windows</li>
+              <li>redirections</li>
+              <li>authorization code, access code (a JWT token: Json Web Token)</li>
+              <li>Flask server + Jinja2 templates</li>
+              <li>Python libraries: flask (Flask, make_response, render_template, redirect, request, url_for), requests, json, urllib.parse, base64, cryptography, jwt, secrets, time </li>
+          </ul>
+        <br>
+      </div>
+    </div>
+    <hr>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/screenshot.webp" alt="todo" class="cat_img">
+        <h2>Screenshots</h2>
+        <p class="intro">A visual impression:</p>
+        <img src="images/auth-sequence-diagram.png" alt="seq.diagram" class="image-border"><br>
+        <img src="images/auth-screen-1.png" alt="screen-1" class="image-border"><br>
+        <img src="images/auth-screen-2.png" alt="screen-2" class="image-border"><br>
+        <img src="images/auth-screen-3.png" alt="screen-3" class="image-border"><br>
+        <img src="images/auth-network-1.png" alt="network-1" class="image-border">
+        <img src="images/auth-network-2.png" alt="network-2" class="image-border">
+        <br>
+      </div>
+    </div>
+    <hr>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/github.webp" alt="todo" class="cat_img">
+        <h2>Link to the code.</h2>
+        <p class="intro">The code can be found at this <a href="https://github.com/MarcBruyland/authorization_server">link.</a></p>
+        <br>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="bottom-container">
+      <a class="footer-link" href="https://www.linkedin.com/in/marcbruyland/">LinkedIn</a>
+      <p class="copyright">© 2023 Marc Bruyland.</p>
+    </div>
+</body>
+</html>

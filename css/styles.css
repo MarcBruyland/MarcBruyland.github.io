@@ -133,4 +133,8 @@ li {
     max-width: 20%;
     hight: auto;
 }
+
+.image-border {
+    border:1px solid black;
+}
 /******************************* ID SELECTORS ********************************/
