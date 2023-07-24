@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Marc Bruyland</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="top-container">
+        <img class="top-cloud" src="images/cloud.png" alt="cloud-img">
+        <h1>My portfolio.</h1>
+        <h2>Todo manager with authorization server (OAuth based)</h2>
+        <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img">
+        <img src="images/mountain.png" alt="mountain-img">
+    </div>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/target.png" alt="todo" class="cat_img">
+        <h2>Goal</h2>
+        <p class="intro">This web application lets users manage their todo list. The application consists of 3 servers: a client server, an authorization server and a database server.</p>
+        <br>
+      </div>
+    </div>
+    <hr>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/techniques.png" alt="todo" class="cat_img">
+        <h2>Techniques used</h2>
+        <p class="intro">The following techniques were used:</p>
+        <p>the End-user</p>
+        <ul>
+              <li>uses a browser to use the tool</li>
+              <li>registers his/her user credentials at an authorization server</li>
+              <li>logs in at the authorization server via a link presented by the client server</li>
+              <li>uses a browser to manage his personal todo list</li>
+              <li>creates, reads, updates, deletes todos</li>
+        </ul>
+        <p>the Client server</p>
+        <ul>
+              <li>has a client id and a client secret</li>
+              <li>presents a link to the authorization server where the user can authenticate him/herself</li>
+              <li>cannot access the user credentials (user id + password)</li>
+              <li>gets, after authentication of the user, an authorization code from the authorization server</li>
+              <li>converts this authorization code into a temporary (30’) access token which contains the user id, the user email, the name of the issuing authorization server and an expiration time; the client server can extract the user id and the user email by means of the public key of the authorization server</li>
+              <li>renders the user interface for displaying, creating, updating and deleting todos</li>
+              <li>uses REST api’s exposed by the database server; each REST api request contains an access token which will be used by the database server</li>
+        </ul>
+        <p>the Authorization server</p>
+        <ul>
+              <li>renders a login and a signup screen to the user</li>
+              <li>manages a user database (sqlite)</li>
+              <li>verifies user credentials</li>
+              <li>verifies credentials of the client server</li>
+              <li>generates encrypted authorization codes to the client server</li>
+              <li>verifies authorization codes presented by the client server who is requesting an access token in return</li>
+              <li>generates temporary access tokens containing the user id, the user email, the name of the issuing authorization server and an expiration time; these tokens are json web tokens (jwt) signed by the private key of the authorization server</li>
+        </ul>
+        <p>the Database server</p>
+        <ul>
+              <li>manages a todo database (sqlite)</li>
+              <li>exposes REST api’s</li>
+              <li>uses the public key of the authorization server to decode the access token which is contained in each REST api request</li>
+              <li>checks the access token which can result in exceptions of type InvalidTokenError, InvalidSignatureError, InvalidIssuerError and ExpiredSignatureError</li>
+              <li>extracts, if the access token is valid, the user id from the access token; this user id is used to retrieve and update the todos of the user in the todos database</li>
+        </ul>
+        <br>
+      </div>
+    </div>
+    <hr>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/screenshot.webp" alt="todo" class="cat_img">
+        <h2>Screenshots</h2>
+        <p class="intro">A visual impression:</p>
+        <img src="images/todo_oauth_overview_1.png" alt="overview 1">
+        <img src="images/todo_oauth_overview_2.png" alt="overview 2">
+        <img src="images/todo_oauth_overview_3.png" alt="overview 3">
+        <img src="images/todo_oauth_login_1.png" alt="login 1">
+        <img src="images/todo_oauth_login_2.png" alt="login 2">
+        <img src="images/todo_oauth_login_3.png" alt="login 3">
+        <img src="images/todo_oauth_login_4.png" alt="login 4">
+        <img src="images/todo_oauth_login_5.png" alt="login 5">
+        <img src="images/todo_oauth_create_1.png" alt="create 1">
+        <img src="images/todo_oauth_create_2.png" alt="create 2">
+        <img src="images/todo_oauth_create_3.png" alt="create 3">
+        <img src="images/todo_oauth_update_1.png" alt="update 1">
+        <img src="images/todo_oauth_update_2.png" alt="update 2">
+        <img src="images/todo_oauth_update_3.png" alt="update 3">
+        <img src="images/todo_oauth_update_4.png" alt="update 4">
+        <img src="images/todo_oauth_update_5.png" alt="update 5">
+        <img src="images/todo_oauth_delete_1.png" alt="delete 1">
+        <img src="images/todo_oauth_delete_2.png" alt="delete 2">
+        <img src="images/todo_oauth_delete_3.png" alt="delete 3">
+        <img src="images/todo_oauth_signup_1.png" alt="signup 1">
+        <img src="images/todo_oauth_signup_2.png" alt="signup 2">
+        <img src="images/todo_oauth_signup_3.png" alt="signup 3">
+        <img src="images/todo_oauth_signup_4.png" alt="signup 4">
+        <img src="images/todo_oauth_db_1.png" alt="db 1">
+        <img src="images/todo_oauth_db_2.png" alt="db 2">
+        <br>
+      </div>
+    </div>
+    <hr>
+
+    <div class="middle-container">
+      <div class="goal">
+        <img src="images/github.webp" alt="todo" class="cat_img">
+        <h2>Link to the code.</h2>
+        <p class="intro">The code can be found at this <a href="https://github.com/MarcBruyland/todo_with_oauth">link.</a></p>
+        <br>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="bottom-container">
+      <a class="footer-link" href="https://www.linkedin.com/in/marcbruyland/">LinkedIn</a>
+      <p class="copyright">© 2023 Marc Bruyland.</p>
+    </div>
+</body>
+</html>
